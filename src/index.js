@@ -1,7 +1,7 @@
 const Inert = require('inert');
 const Next = require('next');
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 const renderError = require('./render-error');
 const renderScript = require('./render-script');
 const renderHtml = require('./render-html');

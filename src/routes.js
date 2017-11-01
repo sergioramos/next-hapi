@@ -3,7 +3,7 @@ const Intercept = require('apr-intercept');
 const ResolvePkg = require('resolve-pkg');
 const Path = require('path');
 
-const pkg = require('./package.json');
+const pkg = require('../package.json');
 
 const NEXT_ROOT = ResolvePkg('next', { cwd: __dirname });
 const CLIENT_ROOT = Path.join(NEXT_ROOT, 'dist/client');
