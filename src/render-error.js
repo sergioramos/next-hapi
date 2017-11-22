@@ -53,9 +53,11 @@ module.exports = function(page, error, customFields, { dev }) {
   // prevent XSS attacks by filtering the page before printing it.
   const _page = XssFilters.uriInSingleQuotedAttr('/_error');
 
-  return res
-    .response(errorSrc({ page: _page, dev, error, customFields }))
-    // Asks CDNs and others to not to cache the errored page
-    .header('Cache-Control', 'no-store, must-revalidate')
-    .header('Content-Type', 'text/javascript');
+  return (
+    res
+      .response(errorSrc({ page: _page, dev, error, customFields }))
+      // Asks CDNs and others to not to cache the errored page
+      .header('Cache-Control', 'no-store, must-revalidate')
+      .header('Content-Type', 'text/javascript')
+  );
 };
